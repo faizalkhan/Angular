@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script><strong></strong>
+</head>
+
+<body ng-app="myapp">
+
+<input type="text" ng-model="name" placeholder="enter the text">
+
+<p>{{name}} </p>
+<div ng-bind ="name"> </div>
+
+<div ng-init="firstName='john'">
+
+<h2 bg-bind="firstName"> hello </h2>
+
+</div>
+<div ng-init="firstName='John'">
+
+<p>The name is <span ng-bind="firstName"></span></p>
+{{5 + 5}}
+</div>
+
+<div data-ng-controller="myctrl">
+
+<input type="text" ng-model="firstname" > <br>
+<input type="text" ng-model="lastname" > <br>
+
+<!--fullname : {{firstname + " "  + lastname}}-->
+fullname : {{fullname()}}
+</div>
+<!--<script>
+var app = angular.module ('myapp', []);
+app.controller('myctrl',function($scope)
+{
+	$scope.firstname = "faizal";
+	$scope.lastname = "khan";
+});
+</script>-->
+
+<script>
+
+var app = angular.module('myapp', []);
+app.controller('myctrl', function($scope)
+{
+	$scope.firstname = "faizal";
+	$scope.lastname = "khan";
+	$scope.fullname = function()
+	{
+		return $scope.firstname + " " + $scope.lastname;
+	}
+});
+
+</script>
+
+<div ng-init ="quantity=20;cost=2">
+
+<input type="text" ng-model="quantity" > <br>
+<input type="text" ng-model="cost" > <br>
+
+<span ng-bind = "quantity * cost";></span>
+</div>
+
+<div data-ng-init="names=['Jani','Hege','Kai']">
+
+ <ul>
+ 
+  <li data-ng-repeat= "x in names" data-ng-bind ="x" >
+  
+
+   </li> 
+ 
+ </ul>
+
+</div>
+
+<div data-ng-init="person=[
+{name:'ram', country:'india'},
+{name:'ram', country:'india'},
+{name:'ram', country:'india'}]">
+
+ <ul>
+ 
+  <li data-ng-repeat= "z in person">  
+  <p ng-bind = "z.name + ' , ' + z.country"> </p>
+  
+  
+  </li> 
+  </ul>
+  </div>
+</html>
