@@ -61,7 +61,7 @@ app.controller('myctrl', function($scope)
 <input type="text" ng-model="quantity" > <br>
 <input type="text" ng-model="cost" > <br>
 
-<span ng-bind = "quantity * cost";></span>
+<span ng-bind = "quantity * cost | currency";></span>
 </div>
 
 <div data-ng-init="names=['Jani','Hege','Kai']">
@@ -91,4 +91,31 @@ app.controller('myctrl', function($scope)
   </li> 
   </ul>
   </div>
+  
+  <div ng-controller="personCtrl">
+  
+Firstname : <input type="text" ng-model="first"> <br> <br>
+Lastname : <input type="text" ng-model="last"> <br>
+ 
+Fullname :  {{twoname() | uppercase }}
+ 
+  </div>
+  
+    <div ng-controller="namesCtrl">
+    
+    <ul>
+    
+    <li ng-repeat="y in cars | orderBy:'country' "> 
+    
+     {{ y.car + ' ' + y.country }}
+    
+    </li>
+    
+    </ul>
+      
+
+  </div>
+  
+  <script src="personController.js"></script>
+  </body>
 </html>
