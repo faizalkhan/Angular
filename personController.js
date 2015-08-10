@@ -19,5 +19,14 @@ app.controller('namesCtrl', function($scope)
 	{name:'Duston', country:'japan'}
 	]
 	
-}
-)
+})
+
+app.controller('formnames', function($scope, $http)
+{
+	$http.get("http://localhost/basic/output.php")
+	.success(function(response)
+	{
+		$scope.formnames = response.records;
+	})
+	
+})
