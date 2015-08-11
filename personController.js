@@ -23,10 +23,11 @@ app.controller('namesCtrl', function($scope)
 
 app.controller('formnames', function($scope, $http)
 {
-	$http.get("http://localhost/basic/output.php")
+	$http.get("http://localhost:8090/basic/output.php")
 	.success(function(response)
 	{
-		$scope.formnames = response.records;
-	})
+		$scope.form = response;
+		//console.log($scope.form);
+	});
 	
 })

@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <title>Untitled Document</title>
 <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script><strong></strong>
+<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+</style>
+
 </head>
 
 <body ng-app="myapp">
@@ -119,12 +127,24 @@ Fullname :  {{twoname() | uppercase }}
   <div ng-controller="formnames">
   <ul>
   
-  <li ng-repeat = "z in formnames">
-    {{ z }}
+  <li ng-repeat = "z in form">
+    {{ z.name + " " + z.address }}
   
   </li>
   
   </ul>
+  
+<!--  <table border="1">
+  <tr ng-repeat ="z in form | orderBy : 'Country'">
+  
+     <td ng-if ="$odd"> {{ z.Name }} </td>
+      <td ng-if ="$even"  style="background-color:#f1f1f1"> {{ z.Name }} </td>
+       <td ng-if="$odd"> {{ z.Country }} </td>
+         <td ng-if="$even" style = "background-color:#f1f1f1"> {{ z.Country }} </td>
+  </tr>
+  
+  
+  </table>-->
   
   </div>
   

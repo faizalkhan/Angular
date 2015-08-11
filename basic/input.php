@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 //the example of inserting data with variable from HTML form
 //input.php
 mysql_connect("localhost", "root", "");//database connection

@@ -5,6 +5,27 @@ Transitional//EN"
 
 <head>
 <title>Form Input Data</title>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+$(document).ready(function(e) {
+  $( "form" ).on( "submit", function( event ) {
+
+  console.log( $( this ).serialize() );
+  
+  $.ajax({
+  method: "POST",
+   url: "input.php",
+  data: $( this ).serialize()
+});
+
+return false;
+});  
+});
+
+
+
+
+</script>
 </head>
 
 <body>
@@ -14,8 +35,9 @@ Transitional//EN"
   </tr>
   <tr>
     <td>
+    <form method="post">
       <table>
-        <form method="post" action="input.php">
+        
         <tr>
           <td>Name</td>
           <td><input type="text" name="name" size="20">
@@ -31,8 +53,9 @@ Transitional//EN"
           <td align="right"><input type="submit" 
           name="submit" value="Sent"></td>
         </tr>
-        </form>
+        
         </table>
+        </form>
       </td>
     </tr>
 </table>
