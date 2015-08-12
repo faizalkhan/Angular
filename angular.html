@@ -147,7 +147,29 @@ Fullname :  {{twoname() | uppercase }}
   </table>-->
   
   </div>
+  <div ng-init="mybutton=true">
+  <button ng-disabled="mybutton"> switch </button>
   
+  <input type="checkbox" ng-model="mybutton"> hello
+ 
+  <p>
+{{ mybutton }}
+</p>
+</div>
+  
+  
+  <h1 ng-show="true"> iam Visible </h1>
+  
+  <h2 ng-show="false"> iam not visible </h2>
+  
+  <div ng-init="hour=13">
+  
+    <h1 ng-show="hour > 12"> iam Visible </h1>
+  </div>
+  
+  <h2 ng-hide="true"> iam true </h2>
+  
+  <h2 ng-hide="false"> iam true</h2>
   <script src="personController.js"></script>
   </body>
 </html>
