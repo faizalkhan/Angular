@@ -170,6 +170,62 @@ Fullname :  {{twoname() | uppercase }}
   <h2 ng-hide="true"> iam true </h2>
   
   <h2 ng-hide="false"> iam true</h2>
+  
+  
+  <div ng-controller="formcontrol">
+  
+
+  
+  <form>
+  First Name:
+  <input type="text" ng-model="user.firstname">
+  
+  Last Name:
+  <input type="text" ng-model="user.lastname">
+  
+  <button type="button" ng-click="reset()"> </button>
+  </form>
+   <p> forms = {{ user }} </p>
+  <p> master = {{ master }} </p>
+  
+  
+  </div>
+  
+<form ng-controller="validationcontrol" name="myform" novalidate>
+
+  <p>  <input type="text" name="user" ng-model="user" required> 
+
+  <span style="color:red" ng-show="myform.user.$dirty && myform.user.$invalid"> 
+  
+    <span ng-show="myform.user.$error.required"> Username is required.
+  </span>
+  
+  <br></p>
+  
+  <p>
+  <input type="email" name="email" ng-model="email" required>
+  
+   <span style="color:red" ng-show="myform.email.$dirty && myform.email.$invalid"> 
+   
+   <span ng-show="myform.email.$error.required">Email is required.</span>
+<span ng-show="myform.email.$error.email">Invalid email address.</span>
+   
+   
+   </span>
+  
+  
+  </p>
+  
+  <input type="submit" ng-disabled="myform.user.$dirty && myform.user
+  
+  .$invalid || myform.email.$dirty && myform.email.$invalid"  >
+  
+</form>
+  
+
+  
+  
+  
   <script src="personController.js"></script>
   </body>
 </html>

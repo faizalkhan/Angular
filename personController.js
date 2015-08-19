@@ -31,3 +31,21 @@ app.controller('formnames', function($scope, $http)
 	});
 	
 })
+
+app.controller('formcontrol', function($scope)
+{
+
+	$scope.master = { firstname:"john", lastname:"Doe" };
+	$scope.reset = function()
+	{
+		$scope.user = angular.copy($scope.master);
+	}
+	 $scope.reset();
+}
+);
+
+app.controller('validationcontrol', function($scope)
+{
+	$scope.user = "imran";
+	$scope.email= "imran.deo@gmail.com";
+})
