@@ -11,7 +11,7 @@ table, th , td  {
   padding: 5px;
 }
 </style>
-
+<script src="myApp.js"></script>
 </head>
 
 <body ng-app="myapp">
@@ -51,7 +51,6 @@ app.controller('myctrl',function($scope)
 
 <script>
 
-var app = angular.module('myapp', []);
 app.controller('myctrl', function($scope)
 {
 	$scope.firstname = "faizal";
@@ -147,13 +146,13 @@ Fullname :  {{twoname() | uppercase }}
   </table>-->
   
   </div>
-<<<<<<< HEAD
+
   <div>
 <button ng-disabled ="mybutton"> Click me</button>
 
 <button ng-disabled ="mybutton"> Click me</button>
   </div>
-=======
+
   <div ng-init="mybutton=true">
   <button ng-disabled="mybutton"> switch </button>
   
@@ -177,7 +176,34 @@ Fullname :  {{twoname() | uppercase }}
   <h2 ng-hide="true"> iam true </h2>
   
   <h2 ng-hide="false"> iam true</h2>
->>>>>>> 37099144061ad4e1e9639465518db10a17a4df9a
+  
+  
+  <div ng-controller="counters">
+  
+  <button type="button" ng-click="count = count + 1"> Count down starts </button>
+  
+  {{count}}
+  </div>
+  
+  
+  <div ng-controller="goodness">
+  
+   <button type="button" ng-click="toggle()"> user</button>
+  
+  
+  <p ng-hide="care">
+  <input type="text" ng-model="firstnameis">
+    <input type="text" ng-model="lastnameis">
+  
+    {{firstnameis + " " + lastnameis}}
+  </p>
+  
+  </div>
+  
+  
+  
+  
+    
   <script src="personController.js"></script>
   </body>
 </html>

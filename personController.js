@@ -31,3 +31,19 @@ app.controller('formnames', function($scope, $http)
 	});
 	
 })
+app.controller('counters', function($scope)
+{
+	$scope.count = 0;
+})
+
+app.controller('goodness', function($scope)
+{
+	
+	$scope.firstnameis ="john";
+	$scope.lastnameis ="milton";
+	$scope.care=false;
+	$scope.toggle = function()
+	{
+		$scope.care = !$scope.care;
+	}
+});
