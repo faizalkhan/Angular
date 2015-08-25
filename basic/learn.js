@@ -13,9 +13,3 @@ $(document).ready(function(e) {
 return false;
 }); 
 });
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 37099144061ad4e1e9639465518db10a17a4df9a

@@ -31,7 +31,7 @@ app.controller('formnames', function($scope, $http)
 	});
 	
 })
-<<<<<<< HEAD
+
 app.controller('counters', function($scope)
 {
 	$scope.count = 0;
@@ -48,7 +48,7 @@ app.controller('goodness', function($scope)
 		$scope.care = !$scope.care;
 	}
 });
-=======
+
 
 app.controller('formcontrol', function($scope)
 {
@@ -67,4 +67,4 @@ app.controller('validationcontrol', function($scope)
 	$scope.user = "imran";
 	$scope.email= "imran.deo@gmail.com";
 })
->>>>>>> ea4d63fbbfd97b894f891b841d129d0680d92a94
+
