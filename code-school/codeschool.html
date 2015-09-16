@@ -25,8 +25,9 @@
         <!--<div ng-hide="store.product.SoldOut">-->
         <div ng-repeat="product in store.products">
             <h1> Name : </h1>   {{product.name }}
-            <h1>   Price : </h1>  {{product.price }}
+            <h1>   Price : </h1>  {{product.price | currency }}
             <p> <h1>   Description : </h1>  {{product.description }} </p>
+      <img ng-src="{{product.images[0].full}}"/>
 
             <button ng-show="product.CanPurchase"> Add to cart </button>
         </div>
