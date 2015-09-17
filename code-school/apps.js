@@ -17,7 +17,11 @@ app.controller('StoreController', function () {
       rarity: 7,
       color: '#CCC',
       faces: 14,
-      images: [] , 
+      images: [
+        "images/gem-01.gif",
+        "images/gem-03.gif",
+        "images/gem-04.gif"
+      ],
 	  
     }, {
       name: 'Bloodstone',
@@ -32,8 +36,7 @@ app.controller('StoreController', function () {
         "images/gem-03.gif",
         "images/gem-04.gif"
       ],
-	  noimage: true,
-      reviews: [{
+	      reviews: [{
         stars: 3,
         body: "I think this gem was just OK, could honestly use more shine, IMO.",
         author: "JimmyDean@example.org",
@@ -75,3 +78,27 @@ app.controller('StoreController', function () {
       }]
     }];
 
+  app.controller('TabController', function()
+  {
+      this.tab = 1;
+      this.setTab = function (selectedTab) {
+         
+          this.tab = selectedTab;
+      
+        
+      };
+
+      this.isSet = function (givenTab) {
+
+          return this.tab === givenTab;
+
+      };
+
+  });
+
+  app.controller('GalleryController', function () {
+      this.current = 0;
+      this.setCurrent = function (newGallery) {
+          this.current = newGallery || 0;
+      };
+  });
